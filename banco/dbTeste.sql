@@ -30,8 +30,8 @@ BEGIN
 			set nm_especialidade = especialidade
             where cd_consulta = codigo;
 	else
-		insert into tab_consulta (cd_consulta, nm_paciente, nm_email, telefone, nm_especialidade, dataConsulta, periodoConsulta)
-        values(codigo, nome, email, telefone, especialidade, dataConsulta, periodo);       
+		insert into tab_consulta (nm_paciente, nm_email, telefone, nm_especialidade, dataConsulta, periodoConsulta)
+        values(nome, email, telefone, especialidade, dataConsulta, periodo);       
     end if;
 END$$
 DELIMITER ;
