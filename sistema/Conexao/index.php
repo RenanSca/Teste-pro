@@ -1,14 +1,13 @@
 <?php
+$conn = new mysqli("localhost", "root", "", "testepro");
 
-$servername = "localhost";
-$username = "root";
-$database = "testepro";
-$password = "";
-//  Create a new connection to the MySQL database using PDO
-$conn = new mysqli($servername, $username, $password);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
+if (mysqli_connect_errno()) {
+    die('Não foi possível conectar-se ao banco de dados: ' . 
+         mysqli_connect_error());
+    exit();
+}
+
+//echo "Success connection";
+
+//mysqli_close($conn);
 ?>

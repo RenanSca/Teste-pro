@@ -134,7 +134,7 @@
 						<li class="white-text">Lorem ipsum dolor</li>
 					</div>
 					<div class="col s12 m6">
-						<center><img src="images/fisioterapia1.png" style="width: 350px; height: 201px; margin-top: 40px;"></center>
+						<center><img src="images/ortopedia1.gif" style="width: 350px; height: 201px; margin-top: 40px;"></center>
 					</div>
 				</div>
 				<div id="test2" class="col s12">
@@ -166,7 +166,7 @@
 						<li class="white-text">Lorem ipsum dolor</li>
 					</div>
 					<div class="col s12 m6">
-						<center><img src="images/fisioterapia1.png" style="width: 350px; height: 201px; margin-top: 40px;"></center>
+						<center><img src="images/medicina.gif" style="width: 350px; height: 201px; margin-top: 40px;"></center>
 					</div>
 				</div>
 			</div>
@@ -295,35 +295,35 @@
 			<p class="a1">Agende uma</p>
 			<h1 class="b1"><b>CONSULTA</b></h1>	
 			<div class="row">
-		    <form class="col s12" action="sistema/index.php">
-		      <div class="row">
-		        <div class="input-field col s12 m6">
-		          <input id="seu_nome" type="text" class="validate">
-		          <label for="seu_nome">Seu nome</label>
+		    <div class="row">
+		        <div class="input-field col s6">
+		          <input id="seu_nome" name="seu_nome" type="text" class="validate">
+		          <label>Seu nome</label>
 		        </div>
-		        <div class="input-field col s12 m6">
-		          <input id="email" type="email" class="validate">
-		          <label for="email">Seu e-mail</label>
+		        <div class="input-field col s6">
+		          <input id="email" name="email" type="email" class="validate">
+		          <label>Seu e-mail</label>
 		        </div>
 		      </div>
 		      <div class="row">
-		        <div class="input-field col s12 m3">
-		          <input id="numero" type="text" class="validate">
-		          <label for="numero">Seu telefone ou celular</label>
+		        <div class="input-field col s3">
+		          <input id="numero" name="numero" type="text" class="validate">
+		          <label>Seu telefone ou celular</label>
 		        </div>
-		        <div class="input-field col s12 m3">
-		          <input id="especialidade" type="text" class="validate">
-		          <label for="especialidade">Especialidade</label>
+		        <div class="input-field col s3">
+		          <input id="especialidade" name="especialidade" type="text" class="validate">
+		          <label>Especialidade</label>
 		        </div>
-		        <div class="input-field col s12 m3">
-		          <input id="data" type="date" class="validate grey-text">
-		          <label for="data"></label>
+		        <div class="input-field col s3">
+		          <input id="data" name="data" type="date" class="validate grey-text">
+		          <label></label>
 		        </div>
-		        <div class="input-field col s12 m3 white-text">
-		          <select>
-				      <option value="1" >Matutino</option>
-				      <option value="2">Vespertino</option>
-				      <option value="3">Noturno</option>
+		        <div class="input-field col s3 white-text">
+		          <select name="periodoConsulta">
+				      <option value="">Selecione o período</option>
+				      <option value="Matutino">Matutino</option>
+				      <option value="Vespertino">Vespertino</option>
+				      <option value="Noturno">Noturno</option>
 				    </select>
 		        </div>
 		      </div>

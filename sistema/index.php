@@ -1,46 +1,37 @@
 <?php
-ini_set('display_erros',1);
+ini_set('display_errors',1);
+ini_set('display_startup_erros',1);
+error_reporting(E_ALL);
 //CONEXÃO
 include_once("Conexao/index.php");
-try{
+    
     //Recebendo dados
-	$nome = $_POST['seu_nome'];
-	$email = $_POST['email'];
+    $nome = $_POST['seu_nome'];
+    $email = $_POST['email'];
     $telefone = $_POST['numero'];
-	$especialidade = $_POST['especialidade'];
-	$data = $_POST['data'];
+    $especialidade = $_POST['especialidade'];
+    $data = $_POST['data'];
+    $periodo = $_POST['periodoConsulta'];
 
+
+    //TESTANDO SE OS CAMPOS NÃO ESTÃO VAZIOS location.href='../index.html';
     if(!empty($nome) and !empty($especialidade))
-        {
-             //CHAMANDO A PROCEDURE
-        $sql = "call sp_ins_consulta(:nome,:email,:telefone,:especialidade,:data)";
-        $cadastrarConsulta = $conn->prepare($sql);
+            {
 
-            //INSERE OS DADOS
-            $cadastrarConsulta->bindValue(':nome',$nome);
-            $cadastrarConsulta->bindValue(':email',$email);
-            $cadastrarConsulta->bindValue(':telefone', $telefone);
-            $cadastrarConsulta->bindValue(':especialidade', $especialidade);
-            $cadastrarConsulta->bindValue(':data', $data);
-            //EXECUTA O UPDATE
-            $results = $cadastrarConsulta->execute();
+        $sql = "CALL sp_ins_consulta ('$nome','$email','$telefone','$especialidade','$data','$periodo')";
 
-            if($results > 0){
-                echo "<script>alert('Consulta salva com sucesso!')
-                </script>";//location.href='../index.html';
-            }else{
-                echo "<script>alert('Reveja os dados!')
-                </script>";//location.href='../index.html';
-            }
-            
+        if ($conn->query($sql) === TRUE) {
+            echo "<script>alert('Consulta salva com sucesso!')
+                </script>";//;
+        } else {
+            echo "<script>alert('Reveja os dados!')
+                </script>";
         }
-        else{
-            echo "<script>alert('Preencha todos os campos!')
-            </script>";
-        }
-    }catch(PDOException $e){
-            echo 'Mensagem de erro: '.$e->getMessage()."<br>";
-            echo 'Nome do arquivo: '.$e->getFile()."<br>";
-            echo 'Linha: '.$e->getLine()."<br>";
-        }
+    }else{
+        echo "<script>alert('Preencha todos os campos!')
+        </script>";
+    }
+
+    $conn->close();
+
 ?>
