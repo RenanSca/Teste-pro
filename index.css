@@ -98,3 +98,10 @@ body {
 	width: auto;
 	height: auto;
 }
+.bgfooter {
+	background-color: #2f587c;
+}
+.a2 {
+	text-align: left;
+	color: white;
+}
