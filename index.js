@@ -33,10 +33,24 @@
 			    }
 			  }
 			});
-document.addEventListener('DOMContentLoaded', function() {
+
+var caro = new Swiper('.slide-simples', {
+	containerModifierClass: 'slide-simples-',
+	wrapperClass: 'slide-wrap',
+	speed: 1000,
+	slidesPerView: 3,
+	spaceBetween: 0,
+	slidesPerGroup: 1,
+	loop: true,
+	autoplay: {
+    delay: 1000,
+	}
+});
+
+/* document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems, options);
-  });
+  }); */
 
   // Or with jQuery
 
@@ -48,4 +62,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   $(document).ready(function() {
     $('select').material_select();
-  });
+	});
+	
