@@ -6,7 +6,7 @@ nm_paciente varchar(200),
 nm_email varchar(200),
 telefone varchar(11),
 nm_especialidade varchar(100),
-dataConsulta date
+dataConsulta date,
 constraint pk_empresa
 		primary key (cd_consulta));
 /*------------------------------------------------------------------------------------*/
@@ -20,8 +20,7 @@ in codigo int,
 in nome varchar(200),
 in email varchar(200),
 in telefone varchar(11),
-in especialidade varchar(200),
-in dataConsulta date)
+in especialidade varchar(200))
 BEGIN
 	if exists(select cd_consulta from tab_consulta where cd_consulta = codigo) then
 		update tab_consulta
