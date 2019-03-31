@@ -17,7 +17,7 @@ include_once("Conexao/index.php");
 
 
 
-    //TESTANDO SE OS CAMPOS NÃO ESTÃO VAZIOS location.href='../index.html';
+    //TESTANDO SE OS CAMPOS NÃO ESTÃO VAZIOS 
     if(!empty($nome) and !empty($especialidade))
             {
 
@@ -25,14 +25,14 @@ include_once("Conexao/index.php");
 
         if ($conn->query($sql) === TRUE) {
             echo "<script>alert('Consulta salva com sucesso!')
-                </script>";//;
+                location.href='../index.html';</script>";//;
         } else {
             echo "<script>alert('Reveja os dados!')
-                </script>";
+                location.href='../index.html';</script>";
         }
     }else{
         echo "<script>alert('Preencha todos os campos!')
-        </script>";
+        location.href='../index.html';</script>";
     }
 
     $conn->close();
