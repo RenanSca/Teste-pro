@@ -1,37 +1,75 @@
-create database testePro;
-use testePro;
-create table tab_consulta(
-cd_consulta int not null auto_increment,
-nm_paciente varchar(200),
-nm_email varchar(200),
-telefone varchar(11),
-nm_especialidade varchar(100),
-dataConsulta date,
-periodoConsulta varchar(20),
-constraint pk_empresa
-		primary key (cd_consulta));
-/*------------------------------------------------------------------------------------*/
-/*PROCEDURE DE INSERIR E ALTERAR CONSULTA*/
-USE `testepro`;
-DROP procedure IF EXISTS `sp_ins_consulta`;
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: 31-Mar-2019 às 23:37
+-- Versão do servidor: 10.1.37-MariaDB
+-- versão do PHP: 7.3.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `testepro`
+--
+
 DELIMITER $$
-USE `testepro`$$
-CREATE PROCEDURE `sp_ins_consulta`(
-in codigo int,
-in nome varchar(200),
-in email varchar(200),
-in telefone varchar(11),
-in especialidade varchar(200),
-in dataConsulta date,
-in periodo varchar(20))
-BEGIN
-	if exists(select cd_consulta from tab_consulta where cd_consulta = codigo) then
-		update tab_consulta
-			set nm_especialidade = especialidade
-            where cd_consulta = codigo;
-	else
+--
+-- Procedures
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_ins_consulta` (IN `nome` VARCHAR(200), IN `email` VARCHAR(200), IN `telefone` VARCHAR(11), IN `especialidade` VARCHAR(200), IN `dataConsulta` DATE, IN `periodo` VARCHAR(20))  BEGIN
 		insert into tab_consulta (nm_paciente, nm_email, telefone, nm_especialidade, dataConsulta, periodoConsulta)
         values(nome, email, telefone, especialidade, dataConsulta, periodo);       
-    end if;
 END$$
+
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tab_consulta`
+--
+
+CREATE TABLE `tab_consulta` (
+  `cd_consulta` int(11) NOT NULL,
+  `nm_paciente` varchar(200) DEFAULT NULL,
+  `nm_email` varchar(200) DEFAULT NULL,
+  `telefone` varchar(11) DEFAULT NULL,
+  `nm_especialidade` varchar(100) DEFAULT NULL,
+  `dataConsulta` date DEFAULT NULL,
+  `periodoConsulta` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tab_consulta`
+--
+ALTER TABLE `tab_consulta`
+  ADD PRIMARY KEY (`cd_consulta`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tab_consulta`
+--
+ALTER TABLE `tab_consulta`
+  MODIFY `cd_consulta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -4,7 +4,9 @@ ini_set('display_startup_erros',1);
 error_reporting(E_ALL);
 //CONEXÃO
 include_once("Conexao/index.php");
-    
+
+    // var_dump($_POST);
+    // exit;
     //Recebendo dados
     $nome = $_POST['seu_nome'];
     $email = $_POST['email'];
@@ -12,6 +14,7 @@ include_once("Conexao/index.php");
     $especialidade = $_POST['especialidade'];
     $data = $_POST['data'];
     $periodo = $_POST['periodoConsulta'];
+
 
 
     //TESTANDO SE OS CAMPOS NÃO ESTÃO VAZIOS location.href='../index.html';
