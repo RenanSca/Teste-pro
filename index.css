@@ -26,6 +26,7 @@ img{
 .swiper-container {
 	width: 100%;
 	height: 457px;
+	margin-top: 60px;
 }
 
 .swiper-slide {
@@ -151,6 +152,11 @@ img{
 }
 .q {
 	box-shadow: none !important;
+	margin-bottom: 5px;
+}
+.logoimg {
+	width: 230; 
+	height: 60;
 }
 .bgclinica {
 	background-image: url("images/bgclinica.png");
@@ -207,4 +213,68 @@ img{
 .a2 {
 	text-align: left;
 	color: white;
+}
+.mob {
+	background-color: rgba(0, 123, 141,0.6);
+	z-index: 800;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	margin-top: 55px;
+	display: none;
+}
+.mob2 {
+	border-bottom: solid;
+	border-color: white;
+	padding-bottom: 10px;
+	padding-top: 10px;
+
+}
+.mobfont > a {
+	font-size: 20px;
+	color: white !important;
+	text-align: left;
+	margin-left: 20px;
+}
+.hamb {
+	display: none;
+	color: rgba(0, 123, 141,1);
+	position: fixed;
+	right: 20;
+}
+
+.fixo {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	top: 0;
+	background-color: white;
+}
+
+@media screen and (max-width: 992px) {
+ 	.hamb {
+    display: flex;
+	}
+	.mob {
+		margin-top: 0px;
+	}
+	.logoimg {
+		position: fixed;
+		right: 50px;
+	}
+	.a2 {
+		text-align: center;
+	}
+}
+@media screen and (max-width: 500px) {
+	.logoimg {
+		position: fixed;
+		right: -50px;
+	}
+	.a2 {
+		text-align: center;
+	}
+}
+.mob > ul {
+	width: 100%;
 }
