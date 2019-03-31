@@ -50,7 +50,7 @@ body {
 	box-shadow: none !important;
 }
 .bgclinica {
-	background-image: url("images/Sem-Título-2.png");
+	background-image: url("images/bgclinica.png");
 }
 .a {
 	text-align: center;
@@ -66,6 +66,8 @@ body {
 }
 .bgespecialidades {
 	background-image: url("images/fisioterapia.png");
+	width: auto;
+	height: auto;
 }
 .a1 {
 	text-align: center;
@@ -76,4 +78,23 @@ body {
 	text-align: center;
 	color: white;
 	margin-top: -15px;
+}
+.tabs .indicator{
+    background-color: white; 
+}
+.espc {
+	font-size: 20px;
+}
+.c {
+	color: #93dcd9;
+}
+.b3 {
+	font-size: 20px;
+	color: #007b8d;
+	margin-bottom: -15px;
+}
+.bgconsulta {
+	background-image: url("images/bgconsulta.png");
+	width: auto;
+	height: auto;
 }
