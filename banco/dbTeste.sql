@@ -6,8 +6,7 @@ nm_paciente varchar(200),
 nm_email varchar(200),
 telefone varchar(11),
 nm_especialidade varchar(100),
-dataConsulta date,
-horarioConsulta time,
+dataConsulta date
 constraint pk_empresa
 		primary key (cd_consulta));
 /*------------------------------------------------------------------------------------*/
@@ -22,16 +21,15 @@ in nome varchar(200),
 in email varchar(200),
 in telefone varchar(11),
 in especialidade varchar(200),
-in dataConsulta date,
-in horarioConsulta time)
+in dataConsulta date)
 BEGIN
 	if exists(select cd_consulta from tab_consulta where cd_consulta = codigo) then
 		update tab_consulta
 			set nm_especialidade = especialidade
             where cd_consulta = codigo;
 	else
-		insert into tab_consulta (cd_consulta, nm_paciente, nm_email, telefone, nm_especialidade, dataConsulta, horarioConsulta)
-        values(codigo, nome, email, telefone, especialidade, dataConsulta, horarioConsulta);       
+		insert into tab_consulta (cd_consulta, nm_paciente, nm_email, telefone, nm_especialidade, dataConsulta)
+        values(codigo, nome, email, telefone, especialidade, dataConsulta);       
     end if;
 END$$
 DELIMITER ;
